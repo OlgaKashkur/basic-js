@@ -208,7 +208,7 @@ describe('What season', () => {
                 [Symbol.toStringTag]: 'Date'
             };
 
-            Object.setPrototypeOf(fakeDate, Object.getPrototypeOf(new Date()));
+                Object.setPrototypeOf(fakeDate, Object.getPrototypeOf(new Date()));
 
             const res = checkForThrowingErrors.call(this, [
                 () => getSeason(fakeDate)
