@@ -17,8 +17,9 @@ const chainMaker = {
       return this;
     },
     removeLink(position) {
-        if(this.arrString.length < position || position == 4
+        if(this.arrString.length < position
             || position <= 0 || isNaN(position)){
+                this.arrString = [];
             throw new Error('You can\'t remove incorrect link!');
         }
         this.arrString.splice(position-1, 1);
@@ -26,12 +27,13 @@ const chainMaker = {
       return this;
     },
     reverseChain() {
-      this.arrString = this.arrString.reverse();
+      this.arrString.reverse();
       return this;
     },
     finishChain() {
         let str = '';
         this.arrString.forEach(e => str +='( ' + e + ' )~~' );
+        this.arrString = [];
         return str.slice(0, -2);
     }
 };
