@@ -161,9 +161,9 @@ describe('Extended repeater', () => {
     });
 
     it.optional('correctly converts str and addition options to string', () => {
-      const objWithSpecificCoercion = {
-        [Symbol.toPrimitive]: hint => hint !== 'number' ? 'STRING_OR_DEFAULT' : 'NUMBER'
-      };
+        const objWithSpecificCoercion = {
+            [Symbol.toPrimitive]: hint => hint !== 'number' ? 'STRING_OR_DEFAULT' : 'NUMBER'
+        };
 
       assert.equal(repeater(objWithSpecificCoercion, { repeatTimes: 2, addition: objWithSpecificCoercion }), 'STRING_OR_DEFAULTSTRING_OR_DEFAULT+STRING_OR_DEFAULTSTRING_OR_DEFAULT');
     });
